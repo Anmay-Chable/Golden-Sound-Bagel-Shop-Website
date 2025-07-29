@@ -10,4 +10,4 @@ def homepage(request):
     context = {
         'bagels': bagels  # Pass the bagels into a dictionary for the template
     }
-    return render(request, 'menu/index.html')
+    return render(request, 'menu/index.html', context)
