@@ -1,26 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Sound Bagels - Home</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
-<body>
-    <h1>Welcome to Golden Sound Bagels!</h1>
-    <p>Explore our delicious bagel menu below.</p>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
 
-    <h2>Our Bagels:</h2>
-    <ul>
-  {% for bagel in bagels %}
-            <li>
-                <strong>{{ bagel.name }}</strong> - ${{ bagel.price }}
-                {% if bagel.description %}
-                    <p>{{ bagel.description }}</p>
-                {% endif %}
-            </li>
-        {% empty %}
-            <li>No bagels available yet.</li>
-        {% endfor %}
-    </ul>
+    <main class="flex flex-col items-center justify-center text-center w-full max-w-4xl mx-auto">
+
+        <img
+            src="{% static 'images/golden-sound-bagels-logo.png' %}"
+            alt="Golden Sound Bagels Logo"
+            class="block mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto mb-8"
+            {# ^^^ Add block mx-auto here ^^^ #}
+        >
+
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12">
+            Welcome to Golden Sound Bagels
+        </h1>
+
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+
+            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 md:h-40 border border-amber-300">
+                <p class="text-xl md:text-2xl font-semibold text-gray-700">Savory Options</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 md:h-40 border border-amber-300">
+                <p class="text-xl md:text-2xl font-semibold text-gray-700">Sweet/Dessert Options</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 md:h-40 border border-amber-300">
+                <p class="text-xl md:text-2xl font-semibold text-gray-700">Basic Bagels</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="mt-auto py-4 text-center text-gray-600 text-sm">
+        &copy; 2025 Golden Sound Bagels.
+    </footer>
+
 </body>
 </html>
