@@ -1,3 +1,4 @@
+import os
 """
 Django settings for golden_sound_bagels project.
 
@@ -121,3 +122,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# add this to tell Django where to find static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory for static files
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'menu', 'static'),  # path to the static files in the menu app
+]
