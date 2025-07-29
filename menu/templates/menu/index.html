@@ -8,5 +8,19 @@
 <body>
     <h1>Welcome to Golden Sound Bagels!</h1>
     <p>Explore our delicious bagel menu below.</p>
+
+    <h2>Our Bagels:</h2>
+    <ul>
+  {% for bagel in bagels %}
+            <li>
+                <strong>{{ bagel.name }}</strong> - ${{ bagel.price }}
+                {% if bagel.description %}
+                    <p>{{ bagel.description }}</p>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No bagels available yet.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
